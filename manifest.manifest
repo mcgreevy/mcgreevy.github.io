@@ -3,7 +3,7 @@
   "short_name": "Annap",
   "description": "This is a test app",
   "display": "standalone",
-  "start_url": "?utm_source=homescreen",
+  "start_url": "/?utm_source=homescreen",
   "icons": [{
     "src": "exclamations.png",
     "sizes": "192x192"
