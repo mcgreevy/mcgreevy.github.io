@@ -49,7 +49,8 @@ function setup() {
     btn.addEventListener("click", async e => {
             window.console.log("clicked install button");
             btn.disabled = true;
-            const {userChoice} = await event.prompt();
+            uc = await event.prompt();
+            const {userChoice} = uc;
             console.info(`choice was ${userChoice}`);
     });
   });
