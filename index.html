@@ -32,8 +32,8 @@
       btn.addEventListener("click", async e => {
               window.console.log("clicked install button");
               btn.disabled = true;
-              const {choice} = await event.prompt();
-              console.info(`choice was ${choice}`);
+              const {userChoice} = await event.prompt();
+              console.info(`choice was ${userChoice}`);
       });
     });
     if ('serviceWorker' in navigator) {
