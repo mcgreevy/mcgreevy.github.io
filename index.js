@@ -50,8 +50,8 @@ function setup() {
             window.console.log("clicked install button");
             btn.disabled = true;
             uc = await event.prompt();
-            const {userChoice} = uc;
-            console.info(`choice was ${userChoice}`);
+//            const {userChoice} = uc;
+            console.info(`choice was ${uc}`); //userChoice}`);
     });
   });
   if ('serviceWorker' in navigator) {
