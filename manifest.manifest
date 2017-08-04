@@ -1,0 +1,8 @@
+{
+  "name": "Annapolis",
+  "description": "This is a test app"
+  "icons": [{
+    "src": "exclamations.png",
+    "sizes": "192x192"
+  }]
+}
