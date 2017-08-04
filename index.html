@@ -29,7 +29,7 @@
   
       btn = document.getElementById("installbutton");
       btn.disabled = false;
-      btn.addEventListener("click", async event => {
+      btn.addEventListener("click", async e => {
               window.console.log("clicked install button");
               btn.disabled = true;
               const {userChoice} = await event.prompt();
