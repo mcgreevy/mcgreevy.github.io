@@ -13,5 +13,22 @@
   </div>
   <div id="outputContainer" class="section">
   </div>
+
+
+  <button type="button" id="installbutton" disabled="true">Install</button>
+  <script>
+window.addEventListener("beforeinstallprompt", event => {
+    event.preventDefault();
+
+    btn = document.getElementById("installbutton");
+    btn.disabled = false;
+    btn.addEventListener("click", async e => {
+	    window.console.log("clicked install button");
+	    bnt.disabled = true;
+	    const {choice} = await event.prompt();
+	    console.info(`choice was ${choice}`);
+    });
+});
+  </script>
 </body>
 
