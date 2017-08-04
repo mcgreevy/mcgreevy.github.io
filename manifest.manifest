@@ -7,5 +7,7 @@
   "icons": [{
     "src": "exclamations.png",
     "sizes": "512x512"
-  }]
+  }],
+  "background_color": "white",
+  "theme_color": red
 }
