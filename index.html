@@ -24,16 +24,17 @@
 
 
     window.addEventListener("beforeinstallprompt", event => {
-    event.preventDefault();
-
-    btn = document.getElementById("installbutton");
-    btn.disabled = false;
-    btn.addEventListener("click", async e => {
-            window.console.log("clicked install button");
-            bnt.disabled = true;
-            const {choice} = await event.prompt();
-            console.info(`choice was ${choice}`);
-    });
+      window.console.log("event: beforeinstallprompt");
+      event.preventDefault();
+  
+      btn = document.getElementById("installbutton");
+      btn.disabled = false;
+      btn.addEventListener("click", async e => {
+              window.console.log("clicked install button");
+              bnt.disabled = true;
+              const {choice} = await event.prompt();
+              console.info(`choice was ${choice}`);
+      });
     });
     if ('serviceWorker' in navigator) {
       console.log("Will the service worker register?");
