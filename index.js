@@ -37,3 +37,29 @@ function readLocation() {
 function readLocationDelayed() {
   window.setTimeout(readLocation, 5000);
 }
+
+
+function setup() {
+  window.addEventListener("beforeinstallprompt", event => {
+    window.console.log("event: beforeinstallprompt");
+    event.preventDefault();
+
+    btn = document.getElementById("installbutton");
+    btn.disabled = false;
+    btn.addEventListener("click", async e => {
+            window.console.log("clicked install button");
+            btn.disabled = true;
+            const {userChoice} = await event.prompt();
+            console.info(`choice was ${userChoice}`);
+    });
+  });
+  if ('serviceWorker' in navigator) {
+    console.log("Will the service worker register?");
+    navigator.serviceWorker.register('service-worker.js')
+      .then(function(reg){
+        console.log("Yes, it did.");
+      }).catch(function(err) {
+        console.log("No it didn't. This happened: ", err)
+      });
+  }
+}
