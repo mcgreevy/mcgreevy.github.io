@@ -6,6 +6,6 @@
   "start_url": "/?utm_source=homescreen",
   "icons": [{
     "src": "exclamations.png",
-    "sizes": "192x192"
+    "sizes": "512x512"
   }]
 }
