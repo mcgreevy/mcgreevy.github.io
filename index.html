@@ -1,44 +1,49 @@
 <!DOCTYPE html>
-<title>Permission API test</title>
-<head>
-  <script src="index.js"></script>
-  <link href="index.css" rel="stylesheet">
-  <link href="manifest.manifest" rel="manifest">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-  <div id="buttonContainer" class="section">
-    <button type="button" onclick="checkStatus();">Check Status</button>
-    <button type="button" onclick="readLocation();">Read Location</button>
-    <button type="button" onclick="readLocationDelayed();">Read Location Delayed</button>
-  </div>
-  <div id="outputContainer" class="section">
-  </div>
+<html>
+  <head>
+    <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.0.0">
+    <title>
+      Permission API test
+    </title>
+    <script src="index.js"></script>
+    <link href="index.css" rel="stylesheet">
+    <link href="manifest.manifest" rel="manifest">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div id="buttonContainer" class="section">
+      <button type="button" onclick="checkStatus();">Check Status</button> <button type="button" onclick=
+      "readLocation();">Read Location</button> <button type="button" onclick="readLocationDelayed();">Read Location
+      Delayed</button>
+    </div>
+    <div id="outputContainer" class="section"></div><button type="button" id="installbutton" disabled=
+    "true">Install</button> 
+    <script>
 
 
-  <button type="button" id="installbutton" disabled="true">Install</button>
-  <script>
-window.addEventListener("beforeinstallprompt", event => {
+
+
+    window.addEventListener("beforeinstallprompt", event => {
     event.preventDefault();
 
     btn = document.getElementById("installbutton");
     btn.disabled = false;
     btn.addEventListener("click", async e => {
-	    window.console.log("clicked install button");
-	    bnt.disabled = true;
-	    const {choice} = await event.prompt();
-	    console.info(`choice was ${choice}`);
+            window.console.log("clicked install button");
+            bnt.disabled = true;
+            const {choice} = await event.prompt();
+            console.info(`choice was ${choice}`);
     });
-});
-if ('serviceWorker' in navigator) {
-	    console.log("Will the service worker register?");
-	        navigator.serviceWorker.register('service-worker.js')
-			      .then(function(reg){
-				              console.log("Yes, it did.");
-					            }).catch(function(err) {
-				              console.log("No it didn't. This happened: ", err)
-						            });
-		  }
-  </script>
-</body>
-
+    });
+    if ('serviceWorker' in navigator) {
+      console.log("Will the service worker register?");
+      navigator.serviceWorker.register('service-worker.js')
+        .then(function(reg){
+          console.log("Yes, it did.");
+        }).catch(function(err) {
+          console.log("No it didn't. This happened: ", err)
+        });
+    }
+    </script>
+  </body>
+</html>
